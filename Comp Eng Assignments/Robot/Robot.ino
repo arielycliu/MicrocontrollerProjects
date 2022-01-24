@@ -1,4 +1,3 @@
-
 // Set variables for sensors and leds
 const int IRSensorRight = A5;
 const int LEDRight = 2;
@@ -47,19 +46,19 @@ void loop() {
   if (statusSensorRight >= rightSensorBlack && statusSensorLeft >= leftSensorBlack){
     digitalWrite(LEDRight, HIGH); // set led high since on black line
     digitalWrite(LEDLeft, HIGH);
-    digitalWrite(motorRightFor, LOW); 
-    digitalWrite(motorRightBack, LOW);
-    digitalWrite(motorLeftFor, LOW);
-    digitalWrite(motorLeftBack, LOW); 
+    analogWrite(motorRightFor, motorOff);  // set motors to low
+    analogWrite(motorRightBack, motorOff);
+    analogWrite(motorLeftFor, motorOff);
+    analogWrite(motorLeftBack, motorOff); 
   }
 
   // CASE 2: Both sensors on white -> STRAIGHT FORWARD
   else if (statusSensorRight < rightSensorBlack && statusSensorLeft < leftSensorBlack){
     digitalWrite(LEDRight, LOW); // set led low since on white board
     digitalWrite(LEDLeft, LOW);
-    analogWrite(motorRightFor, motorHigh); 
+    analogWrite(motorRightFor, motorHigh);  // set right motor to forward on
     analogWrite(motorRightBack, motorOff);
-    analogWrite(motorLeftFor, motorHigh);
+    analogWrite(motorLeftFor, motorHigh); // set left motor to forward on
     analogWrite(motorLeftBack, motorOff);
   }
   
