@@ -4,6 +4,7 @@ const int LEDRight = 2;
 const int IRSensorLeft = A0;
 const int LEDLeft = 13;
 
+// Set ir sensor black color values
 int leftSensorBlack = 150;
 int rightSensorBlack = 150; 
 
@@ -16,6 +17,7 @@ const int motorRightBack  = 10;  // Pin  2 of L293
 const int motorLeftFor  = 5;  // Pin 14 of L293
 const int motorLeftBack  = 6;  // Pin 10 of L293
 
+// Set motor speeds
 int motorHigh = 160;
 int motorSlow = 100;
 int motorOff = 0;
