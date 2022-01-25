@@ -64,7 +64,7 @@ void loop() {
     analogWrite(motorLeftBack, motorOff);
   }
   
-  // CASE 3: Right sensor on black -> turn left
+  // CASE 3: Right sensor on black -> turn right
   else if (statusSensorRight >= rightSensorBlack && statusSensorLeft < leftSensorBlack){
     digitalWrite(LEDRight, HIGH); // set led high to indicate black line
     digitalWrite(LEDLeft, LOW);
@@ -74,7 +74,7 @@ void loop() {
     analogWrite(motorLeftBack, motorOff); // move left wheel forward
   }
 
-  // CASE 4: Left sensor on black -> turn right
+  // CASE 4: Left sensor on black -> turn left
   else if (statusSensorRight < rightSensorBlack && statusSensorLeft >= leftSensorBlack){
     digitalWrite(LEDRight, LOW);
     digitalWrite(LEDLeft, HIGH); // set led high to indicat black line
